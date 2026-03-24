@@ -1,0 +1,21 @@
+ID;NOMBRES;APELLIDOS;TELEFONO;EMAIL
+CL1;ana maria;rodriguez lopez;5538129045;ana.rodriguez@example.com
+CL2;luis alberto;martinez sanchez;5587213409;luis.martinez@example.com
+CL3;karla fernanda;gomez hernandez;5549871230;karla.gomez@example.com
+CL4;pedro antonio;salinas ramirez;5576301298;pedro.salinas@example.com
+CL5;mariana isabel;torres garcia;5519087643;mariana.torres@example.com
+CL6;jorge armando;herrera flores;5567812340;jorge.herrera@example.com
+CL7;daniela michelle;pineda castro;5523498712;daniela.pineda@example.com
+CL8;ricardo emmanuel;vazquez morales;5589034127;ricardo.vazquez@example.com
+CL9;sofia alejandra;aguilar ruiz;5541209876;sofia.aguilar@example.com
+CL10;hector manuel;luna ortega;5578943201;hector.luna@example.com
+CL11;valeria cristina;campos reyes;5534789021;valeria.campos@example.com
+CL12;fernando javier;rios mendoza;5587123490;fernando.rios@example.com
+CL13;paola andrea;sanchez guerrero;5512349087;paola.sanchez@example.com
+CL14;adrian eduardo;cortes silva;5576012389;adrian.cortes@example.com
+CL15;gabriela carolina;nunez dominguez;5545678912;gabriela.nunez@example.com
+CL16;tomas sebastian;delgado aguilar;5589341207;tomas.delgado@example.com
+CL17;monica patricia;reyes vargas;5527813490;monica.reyes@example.com
+CL18;ivan daniel;castillo jimenez;5567890123;ivan.castillo@example.com
+CL19;alejandra paola;silva moreno;5532109874;alejandra.silva@example.com
+CL20;ernesto francisco;paredes cruz;5578901234;ernesto.paredes@example.com

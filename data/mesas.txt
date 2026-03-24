@@ -1,0 +1,21 @@
+NUMERO_MESA;CAPACIDAD;UBICACION
+M1;2;terraza exterior
+M2;4;zona principal
+M3;6;salón vip
+M4;2;barra
+M5;4;terraza exterior
+M6;8;salón principal
+M7;2;ventana norte
+M8;4;zona principal
+M9;6;jardín interior
+M10;2;barra
+M11;4;terraza exterior
+M12;4;zona principal
+M13;8;salón vip
+M14;2;ventana sur
+M15;6;jardín interior
+M16;4;zona principal
+M17;2;barra
+M18;6;terraza exterior
+M19;4;ventana norte
+M20;10;salón vip
