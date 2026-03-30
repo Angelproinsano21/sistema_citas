@@ -1,12 +1,11 @@
 import os 
 
-
 #ruta_clientes = r'D:\Lenguajes de Programación\Curso de Programación con Python\Proyecto Integrador\sistema_citas\data\clientes.txt'
 ruta_clientes = os.path.abspath('clientes.txt')
 
 print(ruta_clientes)
 
-"""def buscarcliente(nombres, apellidos, telefono,correo):
+def buscarcliente(nombres, apellidos, telefono,correo):
     with open(ruta_clientes, 'r', encoding='utf-8') as base_clientes:
         for linea in base_clientes:
             linea = linea.strip().split(';')
@@ -26,4 +25,4 @@ def registrar_cliente(nombres, apellidos, telefono,correo):
     id = f'CL{indice+1}'
     with open (ruta_clientes, 'a', encoding='utf-8') as base:
         base.write(f'{id};{nombres};{apellidos};{telefono};{correo}\n')
-    return(id)"""
+    return(id)
