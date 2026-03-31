@@ -1,10 +1,8 @@
 import os 
+ruta_base = os.path.dirname(__file__)
+ruta_clientes= os.path.join(ruta_base, 'data', 'clientes.txt')
 
-#ruta_clientes = r'D:\Lenguajes de Programación\Curso de Programación con Python\Proyecto Integrador\sistema_citas\data\clientes.txt'
-ruta_clientes = os.path.abspath('clientes.txt')
-
-print(ruta_clientes)
-
+#FUNCION PARA BUSCAR CLIENTES
 def buscarcliente(nombres, apellidos, telefono,correo):
     with open(ruta_clientes, 'r', encoding='utf-8') as base_clientes:
         for linea in base_clientes:
@@ -18,6 +16,7 @@ def buscarcliente(nombres, apellidos, telefono,correo):
                 return(id_archivo) 
         return None
         
+#FUNCION PARA REGISTRAR CLIENTE NUEVO 
 def registrar_cliente(nombres, apellidos, telefono,correo):
     with open (ruta_clientes, 'r') as base:
         for indice, lineas in enumerate(base):

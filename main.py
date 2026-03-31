@@ -44,10 +44,11 @@ print(f'Hola {nombres}')
 while True:
     Eleccion = input('Menú\n1)Reservar\n2)Checar Reservación\n3)Cancelar reservación\n4)Editar reservación\n5)Salir\nElige una opción:  ')
     match Eleccion:
-        case '1':
+        case '1': #CREAR LA RESERVACION
+            fecha = input('Ingresa la fecha que quieres reservar (DD/MM/YYYY): ')
             pass
 
-        case '2':
+        case '2': #CHECAR LA RESERVACION
             while True:
                 a = input('¿Cuentas con el ID de tu reserva?: ')
                 match a:
@@ -59,8 +60,10 @@ while True:
                             break
                         elif id_reserva and estatus == 'modificado':
                             print (f'Tu reservación ya ha sido modificada\nFecha: {fecha}, Hora de Inicio: {hora_inicio}, hora fin: {hora_fin} ')
+                            break
                         elif id_reserva and estatus == 'cancelado':
                             print('Tu reservación ha sido cancelada')
+                            break
                         else:
                             print('No se encontro el id de tu reserva se te redigira a la pestaña principal')
                             continue
@@ -93,7 +96,7 @@ while True:
                         print('La opción que seleccionaste no es válida')
                         continue
 
-        case '3':
+        case '3': #CANCELAR RESERVACION 
             while True:
                 b = input('¿Cuentas con el nunmero de reservación?: ')
                 match b:
@@ -101,19 +104,21 @@ while True:
                         id_reserva = input('Ingresa el numero de tu reservación: ')
                     case 'no':
                         fecha= input('Ingresa la fecha de la reservación (DD/MM/YYYY): ')
+                        fecha = validar_fecha(fecha)
                         hora_inicio = input('Ingresa tu hora de inicio de la reservación (HH:MM): ')
                         hora_fin = input('Ingresa la hora de fin de la reserva (HH:MM): ')
                         id_reserva = reservas.checar_reserva(fecha, hora_inicio, hora_fin)
+
                     case _:
                         print('La opción que elegiste no es válida.')
                         continue
 
-        case '4':
+        case '4': #EDITAR LA RESERVACION
             pass
 
-        case '5':
+        case '5': #SALIR
             print('Gracias por usar nuestros servicios')
             break
-        case _:
+        case _: #SI NO FUNCIONA NINGUNA
             print('La opción que elegiste no es válida intenta de nuevo')
             continue

@@ -1,5 +1,7 @@
-
-ruta_reservas = r'D:\Lenguajes de Programación\Curso de Programación con Python\Proyecto Integrador\sistema_citas\data\reserva.txt'
+import os
+#ruta_reservas = r'D:\Lenguajes de Programación\Curso de Programación con Python\Proyecto Integrador\sistema_citas\data\reserva.txt'
+ruta_base = os.path.dirname(__file__)
+ruta_reservas= os.path.join(ruta_base, 'data', 'reserva.txt')
 
 def buscarDisponibilidad(id_mesa, fecha, hora):
     pass
@@ -21,7 +23,7 @@ def checar_reserva(id_cliente, fecha):
             if id_cliente == id_cl_archivo and fecha == fecha_archivo:
                 return(id_reserva, estatus_archivo)
         else:
-            return(None)
+            return None
 
 def checar_reserva_por_id (id_reserva):
     with open(ruta_reservas, 'r', encoding='utf-8') as reservas:
@@ -36,21 +38,32 @@ def checar_reserva_por_id (id_reserva):
                 return(fecha_archivo, hora_inicio_archivo, hora_fin_archivo, estatus_archivo)
         else:
             return(None)                
+        
 def cancelar_reserva_por_id(id_reserva):
-    with open (ruta_reservas, 'r', encoding='utf-8') as reservas: 
-        for lineas in reservas:
-            lineas = lineas.strip().split(';')
-            id_archivo = lineas[0]
-            id_cliente = lineas[1]
-            id_mesa = lineas[2]
-            fecha = lineas[3]
-            hora_inicio = lineas[4]
-            hora_fin = lineas[5]
-            estatus = lineas[6]
-        if id_reserva == id_archivo:
-            estatus = 'cancelada'
-            with open (ruta_reservas, 'w', encoding='utf-8') as reservas:
-                reservas.write(f'{id_archivo};{id_cliente};{id_mesa};{fecha};{hora_inicio};{hora_fin};{estatus}')
+    nuevas_lineas = []
+    encontrado = False
+    with open(ruta_reservas, 'r', encoding='utf-8') as reservas:
+        for linea in reservas:
+            campos = linea.strip().split(';')
+            id_archivo = campos[0]
+            if id_archivo == id_reserva:
+                campos[6] = 'cancelada'
+                encontrado = True
+            nuevas_lineas.append(';'.join(campos))
+    with open(ruta_reservas, 'w', encoding='utf-8') as reservas:
+        for linea in nuevas_lineas:
+            reservas.write(linea + '\n')
+    return encontrado
+
+
+def cancelar_reserva(id_cliente, fecha):
+    nuevas_lineas = []
+    encontrado = False
+    with open(ruta_reservas, 'r', encoding='utf-8') as reservas:
+        for linea in reservas:
+            campos = linea.strip().split(';')
+            id_archivo = campos[0] 
+            id_cliente_archivo = campos[1]
                 
 
 
