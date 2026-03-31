@@ -24,4 +24,4 @@ def registrar_cliente(nombres, apellidos, telefono,correo):
     id = f'CL{indice+1}'
     with open (ruta_clientes, 'a', encoding='utf-8') as base:
         base.write(f'{id};{nombres};{apellidos};{telefono};{correo}\n')
-    return(id)
+    return id

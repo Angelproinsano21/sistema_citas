@@ -1,5 +1,4 @@
 import os
-#ruta_reservas = r'D:\Lenguajes de Programación\Curso de Programación con Python\Proyecto Integrador\sistema_citas\data\reserva.txt'
 ruta_base = os.path.dirname(__file__)
 ruta_reservas= os.path.join(ruta_base, 'data', 'reserva.txt')
 
@@ -39,7 +38,7 @@ def checar_reserva_por_id (id_reserva):
         else:
             return(None)                
         
-def cancelar_reserva_por_id(id_reserva):
+def cancelar_reserva(id_reserva):
     nuevas_lineas = []
     encontrado = False
     with open(ruta_reservas, 'r', encoding='utf-8') as reservas:
@@ -54,13 +53,3 @@ def cancelar_reserva_por_id(id_reserva):
         for linea in nuevas_lineas:
             reservas.write(linea + '\n')
     return encontrado
-
-
-def cancelar_reserva(id_cliente, fecha):
-    nuevas_lineas = []
-    encontrado = False
-    with open(ruta_reservas, 'r', encoding='utf-8') as reservas:
-        for linea in reservas:
-            campos = linea.strip().split(';')
-            idClienteArchivo= campos[1]
-            fechaArchivo = campos[3]
