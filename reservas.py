@@ -62,20 +62,5 @@ def cancelar_reserva(id_cliente, fecha):
     with open(ruta_reservas, 'r', encoding='utf-8') as reservas:
         for linea in reservas:
             campos = linea.strip().split(';')
-            id_archivo = campos[0] 
-            id_cliente_archivo = campos[1]
-                
-
-
-
-
-            
-
-            
-
-"""id_cliente = input('No. Cliente: ')
-fecha = input('Ingresa la fecha de tu reservación (DD/MM/YYYY): ')
-hora_inicio = input('Ingresa la hora de inicio de tu reserva (HH:MM): ')
-hora_fin = input('Ingresa la hora de fin de la reserva (HH:MM): ')
-checar_reserva(id_cliente, fecha, hora_inicio, hora_fin)
-"""
+            idClienteArchivo= campos[1]
+            fechaArchivo = campos[3]

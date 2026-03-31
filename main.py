@@ -101,12 +101,17 @@ while True:
                 b = input('¿Cuentas con el nunmero de reservación?: ')
                 match b:
                     case 'si'|'ci'|'zi'|'s'|'sy'|'cy'|'zy':
-                        id_reserva = input('Ingresa el numero de tu reservación: ')
+                        id_reserva = input('Ingresa el numero de tu reservación: ') 
                     case 'no':
                         fecha= input('Ingresa la fecha de la reservación (DD/MM/YYYY): ')
                         fecha = validar_fecha(fecha)
+
                         hora_inicio = input('Ingresa tu hora de inicio de la reservación (HH:MM): ')
+                        hora_inicio = validar_hora(hora_inicio)
+
                         hora_fin = input('Ingresa la hora de fin de la reserva (HH:MM): ')
+                        hora_fin = validar_hora(hora_fin)
+                        
                         id_reserva = reservas.checar_reserva(fecha, hora_inicio, hora_fin)
 
                     case _:
